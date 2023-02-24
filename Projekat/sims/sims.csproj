@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{010B3327-2EB6-454B-AD9F-E9F7C3A5B368}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>sims</RootNamespace>
+    <AssemblyName>sims</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\EntityNotFoundException.cs" />
+    <Compile Include="Model\Bolnica.cs" />
+    <Compile Include="Model\Dijagnoza.cs" />
+    <Compile Include="Model\Feedback.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\Lek.cs" />
+    <Compile Include="Model\Lekar.cs" />
+    <Compile Include="Model\Nabavka.cs" />
+    <Compile Include="Model\NeregistrovaniPacijent.cs" />
+    <Compile Include="Model\Obavestenja.cs" />
+    <Compile Include="Model\Ocena.cs" />
+    <Compile Include="Model\Oprema.cs" />
+    <Compile Include="Model\Pacijent.cs" />
+    <Compile Include="Model\Pitanje.cs" />
+    <Compile Include="Model\Prostorija.cs" />
+    <Compile Include="Model\RadnoVreme.cs" />
+    <Compile Include="Model\Recept.cs" />
+    <Compile Include="Model\Renoviranje.cs" />
+    <Compile Include="Model\Sekretar.cs" />
+    <Compile Include="Model\Stanje.cs" />
+    <Compile Include="Model\StanjeProstorije.cs" />
+    <Compile Include="Model\Termin.cs" />
+    <Compile Include="Model\TipOpreme.cs" />
+    <Compile Include="Model\TipProstorije.cs" />
+    <Compile Include="Model\TipRenoviranja.cs" />
+    <Compile Include="Model\TipTermina.cs" />
+    <Compile Include="Model\Upravnik.cs" />
+    <Compile Include="Model\Uput.cs" />
+    <Compile Include="Model\VrednostOcene.cs" />
+    <Compile Include="Model\Zaposleni.cs" />
+    <Compile Include="Model\ZdravstveniKarton.cs" />
+    <Compile Include="Repository\Abstract\IFeedbackRepository.cs" />
+    <Compile Include="Repository\Abstract\IIdentifiable.cs" />
+    <Compile Include="Repository\Abstract\ILekarRepository.cs" />
+    <Compile Include="Repository\Abstract\ILekRepository.cs" />
+    <Compile Include="Repository\Abstract\IObavestenjaRepository.cs" />
+    <Compile Include="Repository\Abstract\IOpremaRepository.cs" />
+    <Compile Include="Repository\Abstract\IPacijentRepository.cs" />
+    <Compile Include="Repository\Abstract\IProstorijaRepository.cs" />
+    <Compile Include="Repository\Abstract\IReceptRepository.cs" />
+    <Compile Include="Repository\Abstract\IRepository.cs" />
+    <Compile Include="Repository\Abstract\ISekretarRepository.cs" />
+    <Compile Include="Repository\Abstract\ITerminRepository.cs" />
+    <Compile Include="Repository\Abstract\IUpravnikRepository.cs" />
+    <Compile Include="Repository\CSV\Converter\FeedbackCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\ICSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\LekarCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\LekCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\ObavestenjaCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\OpremaCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\PacijentCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\ProstorijaCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\ReceptCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\SekretarCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\TerminCSVConverter.cs" />
+    <Compile Include="Repository\CSV\Converter\UpravnikCSVConverter.cs" />
+    <Compile Include="Repository\CSV\CSVRepository.cs" />
+    <Compile Include="Repository\CSV\IEagerCSVRepository.cs" />
+    <Compile Include="Repository\CSV\Stream\CSVStream.cs" />
+    <Compile Include="Repository\CSV\Stream\ICSVStream.cs" />
+    <Compile Include="Repository\DijagnozaRepository.cs" />
+    <Compile Include="Repository\FeedbackRepository.cs" />
+    <Compile Include="Repository\LekarRepository.cs" />
+    <Compile Include="Repository\LekRepository.cs" />
+    <Compile Include="Repository\ObavestenjaRepository.cs" />
+    <Compile Include="Repository\OcenaRepository.cs" />
+    <Compile Include="Repository\OpremaRepository.cs" />
+    <Compile Include="Repository\PacijentRepository.cs" />
+    <Compile Include="Repository\Pitanja.cs" />
+    <Compile Include="Repository\PitanjeRepository.cs" />
+    <Compile Include="Repository\ProstorijaRepositor.cs" />
+    <Compile Include="Repository\ProstorijaRepository.cs" />
+    <Compile Include="Repository\ReceptRepository.cs" />
+    <Compile Include="Repository\RegistrovaniKorisnikRepository.cs" />
+    <Compile Include="Repository\RenoviranjeRepository.cs" />
+    <Compile Include="Repository\SekretarRepository.cs" />
+    <Compile Include="Repository\Sequencer\ISequencer.cs" />
+    <Compile Include="Repository\Sequencer\LongSequencer.cs" />
+    <Compile Include="Repository\TerminRepository.cs" />
+    <Compile Include="Repository\UpravnikRepository.cs" />
+    <Compile Include="Repository\UputRepository.cs" />
+    <Compile Include="Repository\ZaposleniRepository.cs" />
+    <Compile Include="Repository\ZdravstveniKartonRepository.cs" />
+    <Compile Include="Service\DijagnozaService.cs" />
+    <Compile Include="Service\FeedbackService.cs" />
+    <Compile Include="Service\IZakazivanjeTerminBehavior.cs" />
+    <Compile Include="Service\LekarService.cs" />
+    <Compile Include="Service\LekService.cs" />
+    <Compile Include="Service\ObavestenjeService.cs" />
+    <Compile Include="Service\OpremaService.cs" />
+    <Compile Include="Service\PacijentService.cs" />
+    <Compile Include="Service\PitanjaService.cs" />
+    <Compile Include="Service\ProstorijaService.cs" />
+    <Compile Include="Service\ReceptService.cs" />
+    <Compile Include="Service\RegistrovaniKorisnikService.cs" />
+    <Compile Include="Service\TerminService.cs" />
+    <Compile Include="Service\UputService.cs" />
+    <Compile Include="Service\ZakazivanjeHitnogSlucaja.cs" />
+    <Compile Include="Service\ZakazivanjeOperacije.cs" />
+    <Compile Include="Service\ZakazivanjePrvogTerminaSekretar.cs" />
+    <Compile Include="Service\ZakazivanjeTerminaPacijent.cs" />
+    <Compile Include="Service\ZakazvanjeNarednogTerminaLekar.cs" />
+    <Compile Include="Service\ZaposleniService.cs" />
+    <Compile Include="Service\ZdravstveniKartonService.cs" />
+    <Compile Include="Controller\LekarController.cs" />
+    <Compile Include="Controller\LekController.cs" />
+    <Compile Include="Controller\ObavestenjaController.cs" />
+    <Compile Include="Controller\OpremaController.cs" />
+    <Compile Include="Controller\PacijentController.cs" />
+    <Compile Include="Controller\PitanjaController.cs" />
+    <Compile Include="Controller\ProstorijaController.cs" />
+    <Compile Include="Controller\RegistrovaniKorisnikController.cs" />
+    <Compile Include="Controller\TerminController.cs" />
+    <Compile Include="Controller\ZaposleniController.cs" />
+    <Compile Include="Controller\ZdravstveniKartonController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Data\Feedback.csv" />
+    <None Include="Resources\Data\lek.csv" />
+    <None Include="Resources\Data\Lekar.csv" />
+    <None Include="Resources\Data\Obavestenja.csv" />
+    <None Include="Resources\Data\Oprema.csv" />
+    <None Include="Resources\Data\Pacijent.csv" />
+    <None Include="Resources\Data\Prostorija.csv" />
+    <None Include="Resources\Data\Recept.csv" />
+    <None Include="Resources\Data\Sekretar.csv" />
+    <None Include="Resources\Data\Termin.csv" />
+    <None Include="Resources\Data\Upravnik.csv" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
